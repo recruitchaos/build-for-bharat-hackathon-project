@@ -35,11 +35,13 @@ export const CategoryWiseProductPage = () => {
     <div className="grid md:auto-rows-max md:grid-flow-col md:px-12 md:py-12 gap-4 font-display">
       {data && data.length > 0 ? (
         data.map((item) => (
-          <div key={item.id} className="flex grid w-[200px] h-[200px]">
+          <div key={item.id} className="flex md:flex-col flex-row w-[200px] h-[200px]">
             {/* Render each item's properties */}
-            <img className=" md:h-[200px] md:pb-8 h-[100px]" src={item.image} alt=""/>
-            <h1>${item.price}</h1>
-            <h3>{item.title}</h3>
+            <img className=" md:h-[200px] md:w-[150px] md:pb-8 h-[100px]" src={item.image} alt=""/>
+            <div className="pl-8 md:pl-0">
+              <h1 className="pb-4">{item.title}</h1>
+              <h3>${item.price}</h3>
+            </div>
             {/* Add more properties as needed */}
           </div>
         ))
